@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -25,6 +24,18 @@
             padding: 10px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .number-item span {
+            display: flex;
+            align-items: center;
+        }
+        .vodafone-cash {
+            margin-left: 10px;
+            width: 30px;
+            height: 30px;
         }
         button {
             margin-left: 10px;
@@ -49,12 +60,18 @@
     <div class="numbers available">
         <h3>الأرقام المتاحة:</h3>
         <div class="number-item">
-            <span>0123456789</span>
+            <span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Vodafone_2017_logo.png" alt="Vodafone Cash" class="vodafone-cash">
+                0123456789
+            </span>
             <button class="call-btn" onclick="callNumber('0123456789')">اتصال</button>
             <button class="copy-btn" onclick="copyNumber('0123456789')">نسخ</button>
         </div>
         <div class="number-item">
-            <span>0987654321</span>
+            <span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Vodafone_2017_logo.png" alt="Vodafone Cash" class="vodafone-cash">
+                0987654321
+            </span>
             <button class="call-btn" onclick="callNumber('0987654321')">اتصال</button>
             <button class="copy-btn" onclick="copyNumber('0987654321')">نسخ</button>
         </div>
@@ -63,13 +80,17 @@
     <div class="numbers unavailable">
         <h3>الأرقام غير المتاحة:</h3>
         <div class="number-item">
-            <span>0111111111</span>
-            <button class="call-btn" onclick="callNumber('0111111111')">اتصال</button>
+            <span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Vodafone_2017_logo.png" alt="Vodafone Cash" class="vodafone-cash">
+                0111111111
+            </span>
             <button class="copy-btn" onclick="copyNumber('0111111111')">نسخ</button>
         </div>
         <div class="number-item">
-            <span>0222222222</span>
-            <button class="call-btn" onclick="callNumber('0222222222')">اتصال</button>
+            <span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Vodafone_2017_logo.png" alt="Vodafone Cash" class="vodafone-cash">
+                0222222222
+            </span>
             <button class="copy-btn" onclick="copyNumber('0222222222')">نسخ</button>
         </div>
     </div>
