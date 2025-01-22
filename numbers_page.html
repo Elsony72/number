@@ -39,9 +39,10 @@
             background-color: #4CAF50;
             color: white;
         }
-        .copy-btn {
-            background-color: #007BFF;
+        .unavailable-btn {
+            background-color: #ccc;
             color: white;
+            cursor: not-allowed;
         }
         .header-image {
             width: 100%;
@@ -51,43 +52,40 @@
     </style>
 </head>
 <body>
-    <!-- إضافة صورة في الأعلى -->
-    <img src="YOUR_IMAGE_URL_HERE" alt="Image Description" class="header-image">
+    <!-- إضافة الصور في الأعلى -->
+    <img src="https://i.imgur.com/MHZzwgB.jpg" alt="Image 1" class="header-image">
+    <img src="https://i.imgur.com/ICFg6Gb.jpg" alt="Image 2" class="header-image">
 
     <h1>الأرقام المتاحة للتحويل</h1>
 
     <div class="numbers available">
         <h3>الأرقام المتاحة:</h3>
         <div class="number-item">
-            <span>0123456789</span>
-            <button class="copy-btn" onclick="copyNumber('0123456789')">نسخ</button>
+            <span>01100909984</span>
+            <button class="call-btn" onclick="callNumber('01100909984')">تحويل</button>
         </div>
         <div class="number-item">
-            <span>0987654321</span>
-            <button class="copy-btn" onclick="copyNumber('0987654321')">نسخ</button>
+            <span>01027258929</span>
+            <button class="call-btn" onclick="callNumber('01027258929')">تحويل</button>
+        </div>
+        <div class="number-item">
+            <span>01280100732</span>
+            <button class="call-btn" onclick="callNumber('01280100732')">تحويل</button>
         </div>
     </div>
 
     <div class="numbers unavailable">
         <h3>الأرقام غير المتاحة:</h3>
         <div class="number-item">
-            <span>0111111111</span>
-            <button class="copy-btn" onclick="copyNumber('0111111111')">نسخ</button>
-        </div>
-        <div class="number-item">
-            <span>0222222222</span>
-            <button class="copy-btn" onclick="copyNumber('0222222222')">نسخ</button>
+            <span>01013520221</span>
+            <button class="unavailable-btn" disabled>غير متاح</button>
         </div>
     </div>
 
     <script>
-        // نسخ الرقم إلى الحافظة
-        function copyNumber(number) {
-            navigator.clipboard.writeText(number).then(() => {
-                alert(`تم نسخ الرقم: ${number}`);
-            }).catch(err => {
-                alert('حدث خطأ أثناء النسخ');
-            });
+        // فتح لوحة الاتصال
+        function callNumber(number) {
+            window.location.href = `tel:${number}`;
         }
     </script>
 </body>
