@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأرقام المتاحة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 20px;
+        }
+        .available, .unavailable {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f0f0f0;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        h1, h3 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>الأرقام المتاحة للتحويل</h1>
+    <div class="available">
+        <h3>الأرقام المتاحة:</h3>
+        <ul id="available-numbers">
+            <li>0123456789</li>
+            <li>0987654321</li>
+        </ul>
+    </div>
+    <div class="unavailable">
+        <h3>الأرقام غير المتاحة:</h3>
+        <ul id="unavailable-numbers">
+            <li>0111111111</li>
+            <li>0222222222</li>
+        </ul>
+    </div>
+</body>
+</html>
