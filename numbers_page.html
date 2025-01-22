@@ -63,33 +63,42 @@
     </div>
 
     <h3>الأرقام المتاحة للتحويل:</h3>
-
-    <div class="numbers available">
-        <div class="number-item">
-            <span>01100909984</span>
-            <button class="call-btn" onclick="callNumber('01100909984')">تحويل</button>
-        </div>
-        <div class="number-item">
-            <span>01027258929</span>
-            <button class="call-btn" onclick="callNumber('01027258929')">تحويل</button>
-        </div>
-        <div class="number-item">
-            <span>01280100732</span>
-            <button class="call-btn" onclick="callNumber('01280100732')">تحويل</button>
-        </div>
-        <div class="number-item">
-            <span>01013520221</span>
-            <button class="call-btn" onclick="callNumber('01013520221')">تحويل</button>
-        </div>
-    </div>
+    <div id="available-numbers" class="numbers available"></div>
 
     <h3>الأرقام غير المتاحة:</h3>
-    <div class="numbers unavailable">
-        <!-- لا توجد أرقام غير متاحة حاليًا -->
-        <p>لا توجد أرقام غير متاحة حاليًا.</p>
-    </div>
+    <div id="unavailable-numbers" class="numbers unavailable"></div>
 
     <script>
+        // تحميل الأرقام من ملف JSON
+        fetch('numbers.json')
+            .then(response => response.json())
+            .then(data => {
+                const availableContainer = document.getElementById('available-numbers');
+                const unavailableContainer = document.getElementById('unavailable-numbers');
+
+                // عرض الأرقام المتاحة
+                data.available.forEach(number => {
+                    const numberItem = document.createElement('div');
+                    numberItem.classList.add('number-item');
+                    numberItem.innerHTML = `
+                        <span>${number}</span>
+                        <button class="call-btn" onclick="callNumber('${number}')">تحويل</button>
+                    `;
+                    availableContainer.appendChild(numberItem);
+                });
+
+                // عرض الأرقام غير المتاحة
+                data.unavailable.forEach(number => {
+                    const numberItem = document.createElement('div');
+                    numberItem.classList.add('number-item');
+                    numberItem.innerHTML = `
+                        <span>${number}</span>
+                        <button class="unavailable-btn" disabled>غير متاح</button>
+                    `;
+                    unavailableContainer.appendChild(numberItem);
+                });
+            });
+
         // فتح لوحة الاتصال
         function callNumber(number) {
             window.location.href = `tel:${number}`;
