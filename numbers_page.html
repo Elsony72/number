@@ -28,15 +28,6 @@
             align-items: center;
             justify-content: space-between;
         }
-        .number-item span {
-            display: flex;
-            align-items: center;
-        }
-        .vodafone-cash {
-            margin-left: 10px;
-            width: 30px;
-            height: 30px;
-        }
         button {
             margin-left: 10px;
             padding: 5px 10px;
@@ -52,27 +43,27 @@
             background-color: #007BFF;
             color: white;
         }
+        .header-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
+    <!-- إضافة صورة في الأعلى -->
+    <img src="YOUR_IMAGE_URL_HERE" alt="Image Description" class="header-image">
+
     <h1>الأرقام المتاحة للتحويل</h1>
 
     <div class="numbers available">
         <h3>الأرقام المتاحة:</h3>
         <div class="number-item">
-            <span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Vodafone_2017_logo.png" alt="Vodafone Cash" class="vodafone-cash">
-                0123456789
-            </span>
-            <button class="call-btn" onclick="callNumber('0123456789')">اتصال</button>
+            <span>0123456789</span>
             <button class="copy-btn" onclick="copyNumber('0123456789')">نسخ</button>
         </div>
         <div class="number-item">
-            <span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Vodafone_2017_logo.png" alt="Vodafone Cash" class="vodafone-cash">
-                0987654321
-            </span>
-            <button class="call-btn" onclick="callNumber('0987654321')">اتصال</button>
+            <span>0987654321</span>
             <button class="copy-btn" onclick="copyNumber('0987654321')">نسخ</button>
         </div>
     </div>
@@ -80,27 +71,16 @@
     <div class="numbers unavailable">
         <h3>الأرقام غير المتاحة:</h3>
         <div class="number-item">
-            <span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Vodafone_2017_logo.png" alt="Vodafone Cash" class="vodafone-cash">
-                0111111111
-            </span>
+            <span>0111111111</span>
             <button class="copy-btn" onclick="copyNumber('0111111111')">نسخ</button>
         </div>
         <div class="number-item">
-            <span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Vodafone_2017_logo.png" alt="Vodafone Cash" class="vodafone-cash">
-                0222222222
-            </span>
+            <span>0222222222</span>
             <button class="copy-btn" onclick="copyNumber('0222222222')">نسخ</button>
         </div>
     </div>
 
     <script>
-        // فتح لوحة الاتصال
-        function callNumber(number) {
-            window.location.href = `tel:${number}`;
-        }
-
         // نسخ الرقم إلى الحافظة
         function copyNumber(number) {
             navigator.clipboard.writeText(number).then(() => {
